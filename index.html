@@ -14,8 +14,10 @@
     </ul>
     <script>
         fetch('https://jsonplaceholder.typicode.com/users')
+
         .then(response => response.json())
         .then(json => displayName(json))
+        .catch(error => console.log(error));
 
         function displayName (users){
             const userName = users.map(user => user.username)
